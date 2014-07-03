@@ -9,11 +9,11 @@ jepsen, run the test suite it provides and test implementation for other databas
 jepsen. For detailed usage please refer to Vagrant's documentation. Normally the following should give you, after a couple of
 coffees, a working VM containing five configured LXC boxes configured for running jepsen:
 
-> vagrant up
-> ..... [long]
-> vagrant ssh
-> cd /jepsen
-> lein with-profile elasticsearch test :only jepsen.system.elasticsearch-test
+    vagrant up
+    ..... [long]
+    vagrant ssh
+    cd /jepsen
+    lein with-profile elasticsearch test :only jepsen.system.elasticsearch-test
 
 * Configuration of the vagrant's VM is provided as a bunch of scripts (yes, this should be
   puppet/chef/salt/pick-your-own-scm-tool) which may be used independently from Vagrant itself:

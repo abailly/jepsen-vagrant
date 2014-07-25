@@ -17,11 +17,13 @@ coffees, a working VM containing five configured LXC boxes configured for runnin
 
 * Configuration of the vagrant's VM is provided as a bunch of scripts (yes, this should be
   puppet/chef/salt/pick-your-own-scm-tool) which may be used independently from Vagrant itself:
-      * `setup.sh` install dev packages: git, java and lein
-      * `net.sh` setup the virtual network that connects all LXC boxes 
-      * `lxc.sh` creates the five LXC boxes and configures them
-      *  `functions.sh` contains auxiliary functions useful to other scripts
-      * Note that scripts should be idempotent
+
+   * `setup.sh` install dev packages: git, java and lein
+   * `net.sh` setup the virtual network that connects all LXC boxes 
+   * `lxc.sh` creates the five LXC boxes and configures them
+   *  `functions.sh` contains auxiliary functions useful to other scripts
+   * Note that scripts should be idempotent
+      
 * **Caveat**: Tests might need to be modified as the authentication configuration of LXC boxes is a bit rough. Modify the tests
   accordingly by adding `:ssh` keys to the `core/run!`function's parameters. Normally, logging in as `root` with key
   `~/.ssh/id_rsa` should work fine.

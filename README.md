@@ -51,7 +51,7 @@ coffees, a working VM containing five configured LXC boxes configured for runnin
 
 * As mentioned in Jepsen's own README, if you get errors about HostKey failure from jsch, you probably need to auth all of the vms:
 
-      for i in 1 2 3 4 5; do ssh-keyscan -t rsa n${i}; done >> ~/.ssh/known_hosts
+        for i in 1 2 3 4 5; do ssh-keyscan -t rsa n${i}; done >> ~/.ssh/known_hosts
 
 # TODO
 

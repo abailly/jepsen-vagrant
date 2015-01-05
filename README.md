@@ -33,25 +33,25 @@ coffees, a working VM containing five configured LXC boxes configured for runnin
 
 First, fix your terminal:
 
-  reset
+        reset
 
 Next log in, repair the problem which I'm relatively sure will be wrong with your apt, and run the provisioning again manually:
 
-  vagrant ssh
-  cd /vagrant
-  sudo bash setup.sh # once this is complete, this vm will always be setup for jepsen
-  sudo bash net.sh # this needs to be run on each boot to setup the network for lxcs
-  sudo bash lxc.sh # this creates and/or starts the lxc containers, run once per boot
+        vagrant ssh
+        cd /vagrant
+        sudo bash setup.sh # once this is complete, this vm will always be setup for jepsen
+        sudo bash net.sh # this needs to be run on each boot to setup the network for lxcs
+        sudo bash lxc.sh # this creates and/or starts the lxc containers, run once per boot
 
 At this point, in 'ps auxf' output, you should see a bunch of lxc containers running things like ElasticSearch and RabbitMQ.
 
 If so, you can proceed to following the example command with lein in Jepsen docs, e.g.:
 
-  lein with-profile +rabbitmq test jepsen.system.rabbitmq-test
+        lein with-profile +rabbitmq test jepsen.system.rabbitmq-test
 
 Additionally, from Jepsen's own README, if you get errors about HostKey failure from jsch, you probably need to auth all of the vms:
 
-for i in 1 2 3 4 5; do ssh-keyscan -t rsa n${i}; done >> ~/.ssh/known_hosts
+      for i in 1 2 3 4 5; do ssh-keyscan -t rsa n${i}; done >> ~/.ssh/known_hosts
 
 # TODO
 

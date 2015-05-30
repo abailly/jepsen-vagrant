@@ -5,8 +5,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  config.vm.box = "jessie"
-  config.vm.box_url = "https://dl.dropboxusercontent.com/u/2060057/package.box"
+  config.vm.box = "debian/jessie64"
 
   config.vm.synced_folder "../", "/jepsen"
 

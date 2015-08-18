@@ -1,3 +1,7 @@
+# Requirements
+
+* Vagrant version >= 1.6.3
+
 # Running Jepsen
 
 This directory contains a bunch of files to ease the setup of boxes for running [jepsen](http://github.com/aphyr/jepsen) tests. 
